@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		77DD7BFB26C582A700630764 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DD7BF926C582A700630764 /* LaunchScreen.storyboard */; };
 		77DD7C0626C582A800630764 /* UserListAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7C0526C582A800630764 /* UserListAppTests.swift */; };
 		77DD7C1126C582A900630764 /* UserListAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7C1026C582A900630764 /* UserListAppUITests.swift */; };
+		77DD7C2126C5890700630764 /* CaseSPM in Frameworks */ = {isa = PBXBuildFile; productRef = 77DD7C2026C5890700630764 /* CaseSPM */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77DD7C2126C5890700630764 /* CaseSPM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +101,11 @@
 		77DD7BED26C582A400630764 /* UserListApp */ = {
 			isa = PBXGroup;
 			children = (
+				77DD7BFC26C582A700630764 /* Info.plist */,
 				77DD7BEE26C582A400630764 /* AppDelegate.swift */,
 				77DD7BF026C582A400630764 /* SceneDelegate.swift */,
+				77DD7C1E26C5850200630764 /* Assets */,
 				77DD7BF226C582A400630764 /* ViewController.swift */,
-				77DD7BF426C582A400630764 /* Main.storyboard */,
-				77DD7BF726C582A700630764 /* Assets.xcassets */,
-				77DD7BF926C582A700630764 /* LaunchScreen.storyboard */,
-				77DD7BFC26C582A700630764 /* Info.plist */,
 			);
 			path = UserListApp;
 			sourceTree = "<group>";
@@ -128,6 +128,16 @@
 			path = UserListAppUITests;
 			sourceTree = "<group>";
 		};
+		77DD7C1E26C5850200630764 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				77DD7BF926C582A700630764 /* LaunchScreen.storyboard */,
+				77DD7BF426C582A400630764 /* Main.storyboard */,
+				77DD7BF726C582A700630764 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +154,9 @@
 			dependencies = (
 			);
 			name = UserListApp;
+			packageProductDependencies = (
+				77DD7C2026C5890700630764 /* CaseSPM */,
+			);
 			productName = UserListApp;
 			productReference = 77DD7BEB26C582A400630764 /* UserListApp.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +228,9 @@
 				Base,
 			);
 			mainGroup = 77DD7BE226C582A400630764;
+			packageReferences = (
+				77DD7C1F26C5890700630764 /* XCRemoteSwiftPackageReference "CaseSPM" */,
+			);
 			productRefGroup = 77DD7BEC26C582A400630764 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -589,6 +605,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		77DD7C1F26C5890700630764 /* XCRemoteSwiftPackageReference "CaseSPM" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/barangngr/CaseSPM.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		77DD7C2026C5890700630764 /* CaseSPM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77DD7C1F26C5890700630764 /* XCRemoteSwiftPackageReference "CaseSPM" */;
+			productName = CaseSPM;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 77DD7BE326C582A400630764 /* Project object */;
 }
