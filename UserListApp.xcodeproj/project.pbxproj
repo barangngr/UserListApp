@@ -16,6 +16,8 @@
 		77DD7C0626C582A800630764 /* UserListAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7C0526C582A800630764 /* UserListAppTests.swift */; };
 		77DD7C1126C582A900630764 /* UserListAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7C1026C582A900630764 /* UserListAppUITests.swift */; };
 		77DD7C2126C5890700630764 /* CaseSPM in Frameworks */ = {isa = PBXBuildFile; productRef = 77DD7C2026C5890700630764 /* CaseSPM */; };
+		77DD7C2626C58F8F00630764 /* BaseUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7C2526C58F8F00630764 /* BaseUICollectionViewCell.swift */; };
+		77DD7C2826C58FC400630764 /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7C2726C58FC400630764 /* UserCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		77DD7C0C26C582A800630764 /* UserListAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserListAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77DD7C1026C582A900630764 /* UserListAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListAppUITests.swift; sourceTree = "<group>"; };
 		77DD7C1226C582A900630764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77DD7C2526C58F8F00630764 /* BaseUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUICollectionViewCell.swift; sourceTree = "<group>"; };
+		77DD7C2726C58FC400630764 /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,7 +109,9 @@
 				77DD7BEE26C582A400630764 /* AppDelegate.swift */,
 				77DD7BF026C582A400630764 /* SceneDelegate.swift */,
 				77DD7C1E26C5850200630764 /* Assets */,
-				77DD7BF226C582A400630764 /* ViewController.swift */,
+				77DD7C2426C58F7600630764 /* Abstract Classes */,
+				77DD7C2226C58CFB00630764 /* ViewControllers */,
+				77DD7C2326C58D0E00630764 /* Views */,
 			);
 			path = UserListApp;
 			sourceTree = "<group>";
@@ -136,6 +142,30 @@
 				77DD7BF726C582A700630764 /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		77DD7C2226C58CFB00630764 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				77DD7BF226C582A400630764 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		77DD7C2326C58D0E00630764 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				77DD7C2726C58FC400630764 /* UserCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		77DD7C2426C58F7600630764 /* Abstract Classes */ = {
+			isa = PBXGroup;
+			children = (
+				77DD7C2526C58F8F00630764 /* BaseUICollectionViewCell.swift */,
+			);
+			path = "Abstract Classes";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -275,8 +305,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				77DD7BF326C582A400630764 /* ViewController.swift in Sources */,
+				77DD7C2626C58F8F00630764 /* BaseUICollectionViewCell.swift in Sources */,
 				77DD7BEF26C582A400630764 /* AppDelegate.swift in Sources */,
 				77DD7BF126C582A400630764 /* SceneDelegate.swift in Sources */,
+				77DD7C2826C58FC400630764 /* UserCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
