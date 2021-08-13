@@ -21,11 +21,12 @@ class UserCollectionViewCell: BaseUICollectionViewCell {
     self.backgroundColor = .clear
     
     addSubview(userText)
-    userText.fill(.all)
+    userText.fill(.all, with: 5)
   }
   
-  func configure(_ text: String?) {
-    userText.text = text
+  func configure(_ person: Person?) {
+    let id = String(describing: person?.id ?? 0)
+    userText.text = (person?.fullName ?? "") + " " + id
   }
   
 }

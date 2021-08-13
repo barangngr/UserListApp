@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  UserListApp
 //
 //  Created by Baran Güngör on 12.08.2021.
@@ -8,7 +8,7 @@
 import UIKit
 import CaseSPM
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
   
   // MARK: Properties
   private let collectionView: UICollectionView = {
@@ -23,13 +23,19 @@ class ViewController: UIViewController {
     cv.backgroundColor = .clear
     return cv
   }()
+  
+  private var presenter = HomePresenter()
+  private var dataSource: [Person] = []
 
   // MARK: LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
     collectionView.delegate = self
     collectionView.dataSource = self
+    presenter.delegate = self
     configureViews()
+    
+    presenter.fetchData()
   }
   
   // MARK: Functions
@@ -43,21 +49,33 @@ class ViewController: UIViewController {
 }
 
 // MARK: - Extensions
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 13
+    return dataSource.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(withClass: UserCollectionViewCell.self, for: indexPath)
-    cell.configure("123123")
+    cell.configure(dataSource[indexPath.item])
     return cell
   }
 }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: collectionView.frame.width, height: 20)
+    return CGSize(width: collectionView.frame.width, height: 30)
+  }
+}
+
+extension HomeViewController: HomePresenterDelegate {
+  func didFetchData(_ result: Result<[Person], Error>) {
+    switch result {
+    case .success(let model):
+      dataSource = model
+      collectionView.reloadData()
+    case .failure(let error):
+      print(error.localizedDescription)
+    }
   }
 }
