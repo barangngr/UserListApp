@@ -20,5 +20,9 @@ extension UIColor {
   @nonobjc class var boneWhite: UIColor {
     return #colorLiteral(red: 0.8823529412, green: 0.8823529412, blue: 0.8823529412, alpha: 1)
   }
+  
+  @nonobjc class var seperatorGrey: UIColor {
+    return #colorLiteral(red: 0.7450980392, green: 0.7450980392, blue: 0.7450980392, alpha: 0.1051496291)
+  }
 
 }

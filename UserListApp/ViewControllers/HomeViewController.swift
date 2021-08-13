@@ -45,7 +45,7 @@ class HomeViewController: UIViewController {
   private func configureViews() {
     view.addSubview(collectionView)
     collectionView.fill(.horizontally, with: 5)
-    collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+    collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 5).isActive = true
     collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
   }
   
@@ -101,23 +101,5 @@ extension HomeViewController: HomePresenterDelegate {
     case .failure(let error):
       showErrorController(with: error)
     }
-  }
-}
-
-extension UICollectionView {
-  func setEmptyMessage(_ message: String) {
-    let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
-    messageLabel.text = message
-    messageLabel.textColor = .cardinal
-    messageLabel.numberOfLines = 0;
-    messageLabel.textAlignment = .center;
-    messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
-    messageLabel.sizeToFit()
-    
-    self.backgroundView = messageLabel;
-  }
-  
-  func restore() {
-    self.backgroundView = nil
   }
 }
