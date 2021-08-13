@@ -60,11 +60,18 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     cell.configure(dataSource[indexPath.item])
     return cell
   }
+  
+  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    let endScrolling = (scrollView.contentOffset.y + scrollView.frame.size.height)
+    if endScrolling >= scrollView.contentSize.height {
+      presenter.fetchData()
+    }
+  }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: collectionView.frame.width, height: 30)
+    return CGSize(width: collectionView.frame.width, height: 80)
   }
 }
 
@@ -75,7 +82,16 @@ extension HomeViewController: HomePresenterDelegate {
       dataSource = model
       collectionView.reloadData()
     case .failure(let error):
-      print(error.localizedDescription)
+      showErrorController(with: error)
     }
+  }
+}
+
+extension UIViewController {
+  
+  func showErrorController(with error: Error) {
+    let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+    self.present(alert, animated: true, completion: nil)
   }
 }

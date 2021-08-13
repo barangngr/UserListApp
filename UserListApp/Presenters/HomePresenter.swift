@@ -17,7 +17,8 @@ class HomePresenter {
   private var next: String? = nil
   private var dataSource: [Person] = []
   
-  func fetchData(_ next: String? = nil) {
+  // MARK: Functions
+  func fetchData() {
     DataSource.fetch(next: next) { [weak self] response, error in
       
       guard let self = self else { return }
@@ -26,16 +27,25 @@ class HomePresenter {
         self.delegate?.didFetchData(.failure(error))
         return
       }
-      
+      self.next = response?.next
       self.configureDataSource(response?.people)
       self.delegate?.didFetchData(.success(self.dataSource))
     }
   }
   
   private func configureDataSource(_ people: [Person]?) {
-    people?.forEach({
-      dataSource.append($0)
-    })
+    for person in people! {
+      if !dataSource.contains(person) {
+        dataSource.append(person)
+      }
+    }
   }
   
+}
+
+// MARK: - Extension
+extension Person: Equatable {
+  public static func ==(lhs: Person, rhs: Person) -> Bool {
+      return lhs.id == rhs.id
+  }
 }
