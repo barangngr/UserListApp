@@ -33,6 +33,12 @@ class HomePresenter {
     }
   }
   
+  func refreshData() {
+    dataSource.removeAll()
+    next = nil
+    fetchData()
+  }
+  
   private func configureDataSource(_ people: [Person]?) {
     for person in people! {
       if !dataSource.contains(person) {

@@ -19,10 +19,13 @@ class HomeViewController: UIViewController {
     let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
     cv.register(cellWithClass: UserCollectionViewCell.self)
     cv.translatesAutoresizingMaskIntoConstraints = false
-    cv.showsVerticalScrollIndicator = false
     cv.backgroundColor = .clear
     return cv
   }()
+  
+  private var refreshControl = UIRefreshControl().with({
+    $0.tintColor = .cardinal
+  })
   
   private var presenter = HomePresenter()
   private var dataSource: [Person] = []
@@ -30,10 +33,10 @@ class HomeViewController: UIViewController {
   // MARK: LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
-    collectionView.delegate = self
-    collectionView.dataSource = self
+    view.backgroundColor = .merlin
     presenter.delegate = self
     configureViews()
+    configureCollectionView()
     
     presenter.fetchData()
   }
@@ -41,9 +44,21 @@ class HomeViewController: UIViewController {
   // MARK: Functions
   private func configureViews() {
     view.addSubview(collectionView)
-    collectionView.fill(.horizontally, with: 20)
+    collectionView.fill(.horizontally, with: 5)
     collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
     collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+  }
+  
+  private func configureCollectionView() {
+    collectionView.delegate = self
+    collectionView.dataSource = self
+    collectionView.refreshControl = refreshControl
+    refreshControl.addTarget(self, action: #selector(handleRefreshControl(_:)), for: .valueChanged)
+  }
+  
+  // MARK: Actions
+  @objc private func handleRefreshControl(_ refreshControl: UIRefreshControl) {
+    presenter.refreshData()
   }
   
 }
@@ -52,6 +67,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    dataSource.count == 0 ? collectionView.setEmptyMessage("Nothing to show :(") : collectionView.restore()
     return dataSource.count
   }
   
@@ -63,7 +79,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
   
   func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
     let endScrolling = (scrollView.contentOffset.y + scrollView.frame.size.height)
-    if endScrolling >= scrollView.contentSize.height {
+    if endScrolling >= scrollView.contentSize.height && endScrolling >= scrollView.frame.size.height {
       presenter.fetchData()
     }
   }
@@ -71,12 +87,13 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: collectionView.frame.width, height: 80)
+    return CGSize(width: collectionView.frame.width, height: 40)
   }
 }
 
 extension HomeViewController: HomePresenterDelegate {
   func didFetchData(_ result: Result<[Person], Error>) {
+    refreshControl.endRefreshing()
     switch result {
     case .success(let model):
       dataSource = model
@@ -87,11 +104,20 @@ extension HomeViewController: HomePresenterDelegate {
   }
 }
 
-extension UIViewController {
+extension UICollectionView {
+  func setEmptyMessage(_ message: String) {
+    let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
+    messageLabel.text = message
+    messageLabel.textColor = .cardinal
+    messageLabel.numberOfLines = 0;
+    messageLabel.textAlignment = .center;
+    messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
+    messageLabel.sizeToFit()
+    
+    self.backgroundView = messageLabel;
+  }
   
-  func showErrorController(with error: Error) {
-    let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-    self.present(alert, animated: true, completion: nil)
+  func restore() {
+    self.backgroundView = nil
   }
 }

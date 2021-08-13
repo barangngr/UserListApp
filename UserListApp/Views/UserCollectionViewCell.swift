@@ -13,7 +13,7 @@ class UserCollectionViewCell: BaseUICollectionViewCell {
   // MARK: Properties
   let userText = UILabel().with({
     $0.translatesAutoresizingMaskIntoConstraints = false
-    $0.textColor = .red
+    $0.textColor = .boneWhite
   })
     
   // MARK: Functions
