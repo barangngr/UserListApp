@@ -3,18 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		77DD7BEF26C582A400630764 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7BEE26C582A400630764 /* AppDelegate.swift */; };
 		77DD7BF126C582A400630764 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7BF026C582A400630764 /* SceneDelegate.swift */; };
-		77DD7BF326C582A400630764 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7BF226C582A400630764 /* ViewController.swift */; };
+		77DD7BF326C582A400630764 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7BF226C582A400630764 /* HomeViewController.swift */; };
 		77DD7BF626C582A400630764 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DD7BF426C582A400630764 /* Main.storyboard */; };
 		77DD7BF826C582A700630764 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77DD7BF726C582A700630764 /* Assets.xcassets */; };
 		77DD7BFB26C582A700630764 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77DD7BF926C582A700630764 /* LaunchScreen.storyboard */; };
 		77DD7C0626C582A800630764 /* UserListAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7C0526C582A800630764 /* UserListAppTests.swift */; };
 		77DD7C1126C582A900630764 /* UserListAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7C1026C582A900630764 /* UserListAppUITests.swift */; };
+		77DD7C2126C5890700630764 /* CaseSPM in Frameworks */ = {isa = PBXBuildFile; productRef = 77DD7C2026C5890700630764 /* CaseSPM */; };
+		77DD7C2626C58F8F00630764 /* BaseUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7C2526C58F8F00630764 /* BaseUICollectionViewCell.swift */; };
+		77DD7C2826C58FC400630764 /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7C2726C58FC400630764 /* UserCollectionViewCell.swift */; };
+		77DD7C2A26C655C500630764 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7C2926C655C400630764 /* DataSource.swift */; };
+		77DD7C2D26C656F600630764 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7C2C26C656F600630764 /* HomePresenter.swift */; };
+		77DD7C3026C683C700630764 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7C2F26C683C700630764 /* UIColor+Extensions.swift */; };
+		77DD7C3226C685D400630764 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7C3126C685D400630764 /* UIViewController+Extensions.swift */; };
+		77DD7C3426C6B26500630764 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7C3326C6B26500630764 /* UICollectionView+Extensions.swift */; };
+		77DD7C3726C7D1C800630764 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 77DD7C3626C7D1C800630764 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +47,7 @@
 		77DD7BEB26C582A400630764 /* UserListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UserListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77DD7BEE26C582A400630764 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77DD7BF026C582A400630764 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		77DD7BF226C582A400630764 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		77DD7BF226C582A400630764 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		77DD7BF526C582A400630764 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		77DD7BF726C582A700630764 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		77DD7BFA26C582A700630764 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +58,14 @@
 		77DD7C0C26C582A800630764 /* UserListAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserListAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		77DD7C1026C582A900630764 /* UserListAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListAppUITests.swift; sourceTree = "<group>"; };
 		77DD7C1226C582A900630764 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77DD7C2526C58F8F00630764 /* BaseUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUICollectionViewCell.swift; sourceTree = "<group>"; };
+		77DD7C2726C58FC400630764 /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
+		77DD7C2926C655C400630764 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		77DD7C2C26C656F600630764 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		77DD7C2F26C683C700630764 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		77DD7C3126C685D400630764 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		77DD7C3326C6B26500630764 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		77DD7C3626C7D1C800630764 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77DD7C2126C5890700630764 /* CaseSPM in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +117,17 @@
 		77DD7BED26C582A400630764 /* UserListApp */ = {
 			isa = PBXGroup;
 			children = (
+				77DD7C3626C7D1C800630764 /* README.md */,
+				77DD7BFC26C582A700630764 /* Info.plist */,
 				77DD7BEE26C582A400630764 /* AppDelegate.swift */,
 				77DD7BF026C582A400630764 /* SceneDelegate.swift */,
-				77DD7BF226C582A400630764 /* ViewController.swift */,
-				77DD7BF426C582A400630764 /* Main.storyboard */,
-				77DD7BF726C582A700630764 /* Assets.xcassets */,
-				77DD7BF926C582A700630764 /* LaunchScreen.storyboard */,
-				77DD7BFC26C582A700630764 /* Info.plist */,
+				77DD7C1E26C5850200630764 /* Assets */,
+				77DD7C2426C58F7600630764 /* Abstract Classes */,
+				77DD7C3526C7D00900630764 /* Utils */,
+				77DD7C2226C58CFB00630764 /* ViewControllers */,
+				77DD7C2B26C656AD00630764 /* Presenters */,
+				77DD7C2326C58D0E00630764 /* Views */,
+				77DD7C2E26C683B300630764 /* Extensions */,
 			);
 			path = UserListApp;
 			sourceTree = "<group>";
@@ -128,6 +150,66 @@
 			path = UserListAppUITests;
 			sourceTree = "<group>";
 		};
+		77DD7C1E26C5850200630764 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				77DD7BF926C582A700630764 /* LaunchScreen.storyboard */,
+				77DD7BF426C582A400630764 /* Main.storyboard */,
+				77DD7BF726C582A700630764 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		77DD7C2226C58CFB00630764 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				77DD7BF226C582A400630764 /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		77DD7C2326C58D0E00630764 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				77DD7C2726C58FC400630764 /* UserCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		77DD7C2426C58F7600630764 /* Abstract Classes */ = {
+			isa = PBXGroup;
+			children = (
+				77DD7C2526C58F8F00630764 /* BaseUICollectionViewCell.swift */,
+			);
+			path = "Abstract Classes";
+			sourceTree = "<group>";
+		};
+		77DD7C2B26C656AD00630764 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				77DD7C2C26C656F600630764 /* HomePresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		77DD7C2E26C683B300630764 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				77DD7C2F26C683C700630764 /* UIColor+Extensions.swift */,
+				77DD7C3126C685D400630764 /* UIViewController+Extensions.swift */,
+				77DD7C3326C6B26500630764 /* UICollectionView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		77DD7C3526C7D00900630764 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				77DD7C2926C655C400630764 /* DataSource.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +226,9 @@
 			dependencies = (
 			);
 			name = UserListApp;
+			packageProductDependencies = (
+				77DD7C2026C5890700630764 /* CaseSPM */,
+			);
 			productName = UserListApp;
 			productReference = 77DD7BEB26C582A400630764 /* UserListApp.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +300,9 @@
 				Base,
 			);
 			mainGroup = 77DD7BE226C582A400630764;
+			packageReferences = (
+				77DD7C1F26C5890700630764 /* XCRemoteSwiftPackageReference "CaseSPM" */,
+			);
 			productRefGroup = 77DD7BEC26C582A400630764 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,6 +321,7 @@
 			files = (
 				77DD7BFB26C582A700630764 /* LaunchScreen.storyboard in Resources */,
 				77DD7BF826C582A700630764 /* Assets.xcassets in Resources */,
+				77DD7C3726C7D1C800630764 /* README.md in Resources */,
 				77DD7BF626C582A400630764 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,9 +347,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77DD7BF326C582A400630764 /* ViewController.swift in Sources */,
+				77DD7C2D26C656F600630764 /* HomePresenter.swift in Sources */,
+				77DD7C2A26C655C500630764 /* DataSource.swift in Sources */,
+				77DD7C3426C6B26500630764 /* UICollectionView+Extensions.swift in Sources */,
+				77DD7C3226C685D400630764 /* UIViewController+Extensions.swift in Sources */,
+				77DD7BF326C582A400630764 /* HomeViewController.swift in Sources */,
+				77DD7C3026C683C700630764 /* UIColor+Extensions.swift in Sources */,
+				77DD7C2626C58F8F00630764 /* BaseUICollectionViewCell.swift in Sources */,
 				77DD7BEF26C582A400630764 /* AppDelegate.swift in Sources */,
 				77DD7BF126C582A400630764 /* SceneDelegate.swift in Sources */,
+				77DD7C2826C58FC400630764 /* UserCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -589,6 +685,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		77DD7C1F26C5890700630764 /* XCRemoteSwiftPackageReference "CaseSPM" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/barangngr/CaseSPM.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		77DD7C2026C5890700630764 /* CaseSPM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77DD7C1F26C5890700630764 /* XCRemoteSwiftPackageReference "CaseSPM" */;
+			productName = CaseSPM;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 77DD7BE326C582A400630764 /* Project object */;
 }
