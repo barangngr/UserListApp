@@ -23,6 +23,7 @@
 		77DD7C3026C683C700630764 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7C2F26C683C700630764 /* UIColor+Extensions.swift */; };
 		77DD7C3226C685D400630764 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7C3126C685D400630764 /* UIViewController+Extensions.swift */; };
 		77DD7C3426C6B26500630764 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DD7C3326C6B26500630764 /* UICollectionView+Extensions.swift */; };
+		77DD7C3726C7D1C800630764 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 77DD7C3626C7D1C800630764 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		77DD7C2F26C683C700630764 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		77DD7C3126C685D400630764 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		77DD7C3326C6B26500630764 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		77DD7C3626C7D1C800630764 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,12 +117,13 @@
 		77DD7BED26C582A400630764 /* UserListApp */ = {
 			isa = PBXGroup;
 			children = (
+				77DD7C3626C7D1C800630764 /* README.md */,
 				77DD7BFC26C582A700630764 /* Info.plist */,
 				77DD7BEE26C582A400630764 /* AppDelegate.swift */,
 				77DD7BF026C582A400630764 /* SceneDelegate.swift */,
-				77DD7C2926C655C400630764 /* DataSource.swift */,
 				77DD7C1E26C5850200630764 /* Assets */,
 				77DD7C2426C58F7600630764 /* Abstract Classes */,
+				77DD7C3526C7D00900630764 /* Utils */,
 				77DD7C2226C58CFB00630764 /* ViewControllers */,
 				77DD7C2B26C656AD00630764 /* Presenters */,
 				77DD7C2326C58D0E00630764 /* Views */,
@@ -197,6 +200,14 @@
 				77DD7C3326C6B26500630764 /* UICollectionView+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		77DD7C3526C7D00900630764 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				77DD7C2926C655C400630764 /* DataSource.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +321,7 @@
 			files = (
 				77DD7BFB26C582A700630764 /* LaunchScreen.storyboard in Resources */,
 				77DD7BF826C582A700630764 /* Assets.xcassets in Resources */,
+				77DD7C3726C7D1C800630764 /* README.md in Resources */,
 				77DD7BF626C582A400630764 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
